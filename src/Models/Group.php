@@ -20,6 +20,7 @@ class Group extends Model
         'name',
         'slug',
         'color',
+        'is_private',
     ];
 
     /**
