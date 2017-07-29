@@ -39,6 +39,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Soft Deletes
+    |--------------------------------------------------------------------------
+    |
+    | Set the value to either a true or false boolean to decide whether you'd
+    | like to have soft deletes or force deletes respectively.
+    |
+    */
+    'soft_deletes' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Pagination Limits
     |--------------------------------------------------------------------------
     |

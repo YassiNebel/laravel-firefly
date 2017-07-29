@@ -15,6 +15,11 @@
             border: none;
         }
 
+        .forum .navbar .navbar-form {
+            padding-right: 0;
+            margin-right: -15px;
+        }
+
         /* Jumbotron header */
         .forum .jumbotron {
             padding: 24px 0;
@@ -83,13 +88,13 @@
             margin: 0;
         }
 
-        .forum.discussions #content .panel-options:first-of-type {
+        .forum.discussions #content .panel-options {
             margin-right: 5px;
             display: inline-block;
         }
 
         .forum.discussions #content .panel-options {
-            display: inline;
+            margin-right: 0;
         }
 
         .forum.discussions #content .row.post .user {

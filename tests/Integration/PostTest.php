@@ -52,7 +52,7 @@ class PostTest extends TestCase
                 'content'       => $content,
             ])
             ->assertResponseStatus(302)
-            ->assertRedirectedToRoute('forum.discussions.show', $post->discussion->id);
+            ->assertRedirectedToRoute('forum.discussions.show', $post->discussion->slug);
     }
 
     /**
@@ -63,9 +63,9 @@ class PostTest extends TestCase
         $post = $this->signInAndSeedPost();
         $this->delete(route('forum.posts.destroy', $post->id))
             ->assertResponseStatus(302)
-            ->assertRedirectedToRoute('forum.discussions.show', $post->discussion->id)
+            ->assertRedirectedToRoute('forum.discussions.show', $post->discussion->slug)
             ->assertSessionHas('success', 'Post deleted successfully.');
-        $this->dontSeeInDatabase('posts', ['id' => $post]);
+        $this->assertNotNull($post->fresh()->deleted_at);
     }
 
     /**

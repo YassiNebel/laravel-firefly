@@ -2,13 +2,14 @@
 
 namespace Bitporch\Forum\Models;
 
+use Bitporch\Forum\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kalnoy\Nestedset\NodeTrait;
 
 class Group extends Model
 {
-    use SoftDeletes, NodeTrait;
+    use HasSlug, SoftDeletes, NodeTrait;
 
     /**
      * The attributes that are mass assignable.

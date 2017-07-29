@@ -8,18 +8,25 @@
 
                 @can('manage', $discussion)
                     <div class="pull-right">
+                        <form action="{{ route('forum.discussions.destroy', $discussion) }}" method="POST" class="panel-options">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                            <input type="submit" value="{{ trans('forum::forum.delete') }}" class="btn btn-xs btn-danger pull-right">
+                        </form>
+
                         <form action="{{ route('forum.discussions.flag', $discussion) }}" method="POST" class="panel-options">
                             {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
 
-                            <input type="hidden" name="_method" value="PATCH">
                             <input type="hidden" name="is_locked" value="{{ empty($discussion->locked_at) }}">
                             <input type="submit" value="{{ $discussion->locked_at ? trans('forum::forum.unlock') : trans('forum::forum.lock') }}" class="btn btn-xs btn-{{ $discussion->locked_at ? 'danger' : 'success' }} pull-right">
                         </form>
 
                         <form action="{{ route('forum.discussions.flag', $discussion) }}" method="POST" class="panel-options">
                             {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
 
-                            <input type="hidden" name="_method" value="PATCH">
                             <input type="hidden" name="is_stickied" value="{{ empty($discussion->stickied_at) }}">
                             <input type="submit" value="{{ $discussion->stickied_at ? trans('forum::forum.unsticky') : trans('forum::forum.sticky') }}" class="btn btn-xs btn-{{ $discussion->stickied_at ? 'danger' : 'success' }} pull-right">
                         </form>

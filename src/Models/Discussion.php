@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Discussion extends Model
 {
-    use HasSlug,
-        SoftDeletes;
+    use HasSlug, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

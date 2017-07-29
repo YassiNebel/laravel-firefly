@@ -60,6 +60,18 @@ class PostController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param Post $post
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Post $post)
+    {
+        return view('forum::posts.edit')->with(compact('post'));
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param UpdatePostRequest $request
@@ -71,7 +83,7 @@ class PostController extends Controller
     {
         $post->update($request->all());
 
-        return redirect()->route('forum.discussions.show', $post->discussion_id);
+        return redirect()->route('forum.discussions.show', $post->discussion->slug);
     }
 
     /**
@@ -85,6 +97,7 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('forum.discussions.show', $post->discussion_id)->with('success', 'Post deleted successfully.');
+        return redirect()->route('forum.discussions.show', $post->discussion->slug)
+            ->with('success', 'Post deleted successfully.');
     }
 }

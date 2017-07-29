@@ -2,10 +2,10 @@
     <form action="{{ route('forum.posts.store') }}" method="POST" class="quick-reply">
         {{ csrf_field() }}
 
-        <div class="panel-body text-center">
+        <div class="panel-body">
             <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
 
-            <div class="form-group"{{ $errors->has('content') ? ' has-error' : '' }}>
+            <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
                 <textarea name="content" id="content" rows="3" placeholder="{{ trans('forum::forum.input_reply') }}" class="form-control"></textarea>
 
                 @if ($errors->has('content'))

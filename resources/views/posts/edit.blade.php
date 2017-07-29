@@ -5,12 +5,12 @@
         <div class="panel-heading">{{ trans('forum::forum.edit_post') }}</div>
 
         <div class="panel-body">
-            <form action="{{ route('posts.update', $post->id) }}" method="POST">
+            <form action="{{ route('forum.posts.update', $post->id) }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
 
-                <div class="form-group"{{ $errors->has('content') ? ' has-error' : '' }}>
-                    <label for="content">{{ trans('forum::forum.content') }}</label>
+                <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
+                    <label for="content">{{ trans('forum::forum.label_content') }}</label>
                     <textarea name="content" id="content" placeholder="{{ trans('forum::forum.input_reply') }}" class="form-control">{{ $post->content }}</textarea>
 
                     @if ($errors->has('content'))

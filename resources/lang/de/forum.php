@@ -33,6 +33,7 @@ return [
     // Labels
     'label_title'                   => 'Titel',
     'label_content'                 => 'Inhalt',
+    'label_name'                    => 'Name',
     'label_color'                   => 'Color',
 
     // Inputs
@@ -46,6 +47,8 @@ return [
     'lock'                          => 'Sperren',
     'unsticky'                      => 'Entheften',
     'sticky'                        => 'Anheften',
+    'delete'                        => 'Delete',
+    'edit'                          => 'Edit',
 
     // Search
     'search_results'                => 'Ergebnisse durchsuchen',

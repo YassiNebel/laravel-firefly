@@ -24,21 +24,8 @@ class CreateGroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'discussion_id' => 'required',
-            'title'         => 'required',
-            'slug'          => 'required',
-        ];
-    }
-
-    /**
-     * Get custom messages for validator errors.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'discussion_id' => null,
+            'name'  => 'required',
+            'color' => 'required',
         ];
     }
 }

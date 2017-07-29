@@ -25,7 +25,6 @@ class UpdateGroupRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'slug'  => 'required',
             'color' => 'required',
         ];
     }
