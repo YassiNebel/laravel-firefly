@@ -2,8 +2,8 @@
 
 namespace Bitporch\Tests\Unit;
 
-use Bitporch\Forum\Models\Group;
-use Bitporch\Forum\ViewComposers\GroupComposer;
+use Bitporch\Firefly\Models\Group;
+use Bitporch\Firefly\ViewComposers\GroupComposer;
 use Bitporch\Tests\TestCase;
 use Illuminate\Contracts\View\View;
 use Kalnoy\Nestedset\Collection;

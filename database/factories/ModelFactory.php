@@ -1,8 +1,8 @@
 <?php
 
-use Bitporch\Forum\Models\Discussion;
-use Bitporch\Forum\Models\Group;
-use Bitporch\Forum\Models\Post;
+use Bitporch\Firefly\Models\Discussion;
+use Bitporch\Firefly\Models\Group;
+use Bitporch\Firefly\Models\Post;
 use Bitporch\Tests\Stubs\Models\User;
 
 /* @var \Illuminate\Database\Eloquent\Factory $factory */

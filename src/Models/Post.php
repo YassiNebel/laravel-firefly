@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitporch\Forum\Models;
+namespace Bitporch\Firefly\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -55,6 +55,6 @@ class Post extends Model
      */
     public function user()
     {
-        return $this->belongsTo(config('forum.user'));
+        return $this->belongsTo(config('firefly.user'));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitporch\Forum\Controllers;
+namespace Bitporch\Firefly\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

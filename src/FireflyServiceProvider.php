@@ -1,19 +1,19 @@
 <?php
 
-namespace Bitporch\Forum;
+namespace Bitporch\Firefly;
 
-use Bitporch\Forum\Console\InstallCommand;
-use Bitporch\Forum\Models\Discussion;
-use Bitporch\Forum\Models\Group;
-use Bitporch\Forum\Models\Post;
-use Bitporch\Forum\Observers\DiscussionObserver;
-use Bitporch\Forum\Observers\PostObserver;
+use Bitporch\Firefly\Console\InstallCommand;
+use Bitporch\Firefly\Models\Discussion;
+use Bitporch\Firefly\Models\Group;
+use Bitporch\Firefly\Models\Post;
+use Bitporch\Firefly\Observers\DiscussionObserver;
+use Bitporch\Firefly\Observers\PostObserver;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
-class ForumServiceProvider extends ServiceProvider
+class FireflyServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -28,22 +28,22 @@ class ForumServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadTranslationsFrom(__DIR__.'/../resources/translations', 'forum');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/translations', 'firefly');
 
         $this->publishes([
-            __DIR__.'/../config/forum.php' => config_path('forum.php'),
+            __DIR__.'/../config/firefly.php' => config_path('firefly.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/forum'),
-        ], 'forum');
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/firefly'),
+        ], 'firefly');
 
         $this->registerRouteBindings();
         $this->registerPackageNamespaces();
         $this->registerModelObservers();
         $this->registerBladeDirectives();
 
-        View::composer('*', 'Bitporch\Forum\ViewComposers\GroupComposer');
+        View::composer('*', 'Bitporch\Firefly\ViewComposers\GroupComposer');
     }
 
     /**
@@ -79,15 +79,15 @@ class ForumServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        if (config('forum.api.enabled')) {
+        if (config('firefly.api.enabled')) {
             $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         }
 
-        if (config('forum.web.enabled')) {
+        if (config('firefly.web.enabled')) {
             $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         }
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'forum');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'firefly');
     }
 
     /**

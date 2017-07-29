@@ -10,6 +10,6 @@ if (!function_exists('is_group_mode')) {
      */
     function is_group_mode($mode)
     {
-        return config('forum.group_mode') === $mode;
+        return config('firefly.group_mode') === $mode;
     }
 }

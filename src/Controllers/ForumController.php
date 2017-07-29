@@ -1,8 +1,8 @@
 <?php
 
-namespace Bitporch\Forum\Controllers;
+namespace Bitporch\Firefly\Controllers;
 
-use Bitporch\Forum\Models\Discussion;
+use Bitporch\Firefly\Models\Discussion;
 use Illuminate\Http\Request;
 
 class ForumController extends Controller
@@ -17,9 +17,9 @@ class ForumController extends Controller
         $discussions = Discussion::orderBy([
             'created_at'  => 'desc',
             'stickied_at' => 'desc',
-        ])->paginate(config('forum.pagination.discussions'));
+        ])->paginate(config('firefly.pagination.discussions'));
 
-        return view('forum::index')->with(compact('discussions'));
+        return view('firefly::index')->with(compact('discussions'));
     }
 
     /**
@@ -33,8 +33,8 @@ class ForumController extends Controller
     {
         $discussions = Discussion::where('title', 'like', '%'.$request->get('query').'%')
             ->orderBy('created_at', 'desc')
-            ->paginate(config('forum.pagination.discussions'));
+            ->paginate(config('firefly.pagination.discussions'));
 
-        return view('forum::search-results')->with(compact('discussions'));
+        return view('firefly::search-results')->with(compact('discussions'));
     }
 }

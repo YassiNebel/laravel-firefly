@@ -1,8 +1,8 @@
 <?php
 
-namespace Bitporch\Forum\Observers;
+namespace Bitporch\Firefly\Observers;
 
-use Bitporch\Forum\Models\Post;
+use Bitporch\Firefly\Models\Post;
 
 class PostObserver
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitporch\Forum\Traits;
+namespace Bitporch\Firefly\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 

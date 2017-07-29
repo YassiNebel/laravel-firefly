@@ -1,8 +1,8 @@
 <?php
 
-namespace Bitporch\Forum\Models;
+namespace Bitporch\Firefly\Models;
 
-use Bitporch\Forum\Traits\HasSlug;
+use Bitporch\Firefly\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -91,6 +91,6 @@ class Discussion extends Model
      */
     public function user()
     {
-        return $this->belongsTo(config('forum.user'));
+        return $this->belongsTo(config('firefly.user'));
     }
 }

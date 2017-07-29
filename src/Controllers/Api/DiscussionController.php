@@ -1,11 +1,11 @@
 <?php
 
-namespace Bitporch\Forum\Controllers\Api;
+namespace Bitporch\Firefly\Controllers\Api;
 
-use Bitporch\Forum\Controllers\Controller;
-use Bitporch\Forum\Models\Discussion;
-use Bitporch\Forum\Requests\Discussions\CreateDiscussionRequest;
-use Bitporch\Forum\Requests\Discussions\UpdateDiscussionRequest;
+use Bitporch\Firefly\Controllers\Controller;
+use Bitporch\Firefly\Models\Discussion;
+use Bitporch\Firefly\Requests\Discussions\CreateDiscussionRequest;
+use Bitporch\Firefly\Requests\Discussions\UpdateDiscussionRequest;
 
 class DiscussionController extends Controller
 {
@@ -43,7 +43,7 @@ class DiscussionController extends Controller
     public function show(Discussion $discussion)
     {
         $discussion->posts = $discussion->posts()
-            ->paginate(config('forum.pagination.posts'));
+            ->paginate(config('firefly.pagination.posts'));
 
         return response($discussion);
     }

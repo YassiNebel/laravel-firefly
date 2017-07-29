@@ -1,8 +1,8 @@
 <?php
 
-namespace Bitporch\Forum\ViewComposers;
+namespace Bitporch\Firefly\ViewComposers;
 
-use Bitporch\Forum\Models\Group;
+use Bitporch\Firefly\Models\Group;
 use Illuminate\Contracts\View\View;
 
 class GroupComposer

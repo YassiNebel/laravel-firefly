@@ -1,9 +1,9 @@
 {
-    "name": "bitporch/laravel-forum",
-    "description": "A simple bootstrap styled forum package created for ease of use and expansion.",
-    "keywords": ["laravel", "forum", "discussion"],
+    "name": "bitporch/laravel-firefly",
+    "description": "A simple bootstrap styled forum package for Laravel, created for ease of use and expansion.",
+    "keywords": ["laravel", "forum", "discussion", "firefly"],
     "license": "MIT",
-    "homepage": "https://github.com/bitporch/laravel-forum",
+    "homepage": "https://github.com/bitporch/laravel-firefly",
     "authors": [
         {
             "name": "Andreas Elia",
@@ -34,7 +34,7 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "Bitporch\\Forum\\": "src"
+            "Bitporch\\Firefly\\": "src"
         }
     },
     "autoload-dev": {
@@ -51,7 +51,7 @@
         },
         "laravel": {
             "providers": [
-                "Bitporch\\Forum\\ForumServiceProvider"
+                "Bitporch\\Firefly\\FireflyServiceProvider"
             ]
         }
     },

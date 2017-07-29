@@ -1,10 +1,10 @@
 <?php
 
-namespace Bitporch\Forum\Controllers;
+namespace Bitporch\Firefly\Controllers;
 
-use Bitporch\Forum\Models\Group;
-use Bitporch\Forum\Requests\Groups\CreateGroupRequest;
-use Bitporch\Forum\Requests\Groups\UpdateGroupRequest;
+use Bitporch\Firefly\Models\Group;
+use Bitporch\Firefly\Requests\Groups\CreateGroupRequest;
+use Bitporch\Firefly\Requests\Groups\UpdateGroupRequest;
 
 class GroupController extends Controller
 {
@@ -25,7 +25,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('forum::groups.create');
+        return view('firefly::groups.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class GroupController extends Controller
     {
         $group = Group::create($request->all());
 
-        return redirect()->route('forum::groups.show', $group->id);
+        return redirect()->route('firefly::groups.show', $group->id);
     }
 
     /**
@@ -51,12 +51,12 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        $group->discussions = $group->discussions()->orderBy([
-            'created_at'  => 'desc',
-            'stickied_at' => 'desc',
-        ])->paginate(config('forum.pagination.discussions'));
+        $group->discussions = $group->discussions()
+            ->orderBy'created_at', 'desc')
+            ->orderBy('stickied_at', 'desc')
+            ->paginate(config('firefly.pagination.discussions'));
 
-        return view('forum::groups.show')->with(compact('group'));
+        return view('firefly::groups.show')->with(compact('group'));
     }
 
     /**
@@ -68,7 +68,7 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        return view('forum::groups.edit')->with(compact('group'));
+        return view('firefly::groups.edit')->with(compact('group'));
     }
 
     /**
@@ -83,7 +83,7 @@ class GroupController extends Controller
     {
         $group->update($request->all());
 
-        return view('forum::groups.show')->with(compact('group'));
+        return view('firefly::groups.show')->with(compact('group'));
     }
 
     /**

@@ -1,10 +1,10 @@
 <?php
 
-namespace Bitporch\Forum\Controllers;
+namespace Bitporch\Firefly\Controllers;
 
-use Bitporch\Forum\Models\Post;
-use Bitporch\Forum\Requests\Posts\CreatePostRequest;
-use Bitporch\Forum\Requests\Posts\UpdatePostRequest;
+use Bitporch\Firefly\Models\Post;
+use Bitporch\Firefly\Requests\Posts\CreatePostRequest;
+use Bitporch\Firefly\Requests\Posts\UpdatePostRequest;
 
 class PostController extends Controller
 {
@@ -68,7 +68,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('forum::posts.edit')->with(compact('post'));
+        return view('firefly::posts.edit')->with(compact('post'));
     }
 
     /**

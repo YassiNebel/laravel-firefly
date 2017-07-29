@@ -1,9 +1,9 @@
 <?php
 
-namespace Bitporch\Forum\Controllers\Api\Discussion;
+namespace Bitporch\Firefly\Controllers\Api\Discussion;
 
-use Bitporch\Forum\Controllers\Controller;
-use Bitporch\Forum\Models\Discussion;
+use Bitporch\Firefly\Controllers\Controller;
+use Bitporch\Firefly\Models\Discussion;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 

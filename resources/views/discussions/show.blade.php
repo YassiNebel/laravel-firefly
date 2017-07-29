@@ -1,4 +1,4 @@
-@extends('forum::layouts.app')
+@extends('firefly::layouts.app')
 
 @section('content')
     <div class="panel panel-default">
@@ -12,7 +12,7 @@
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 
-                            <input type="submit" value="{{ trans('forum::forum.delete') }}" class="btn btn-xs btn-danger pull-right">
+                            <input type="submit" value="{{ trans('firefly::forum.delete') }}" class="btn btn-xs btn-danger pull-right">
                         </form>
 
                         <form action="{{ route('forum.discussions.flag', $discussion) }}" method="POST" class="panel-options">
@@ -20,7 +20,7 @@
                             {{ method_field('PATCH') }}
 
                             <input type="hidden" name="is_locked" value="{{ empty($discussion->locked_at) }}">
-                            <input type="submit" value="{{ $discussion->locked_at ? trans('forum::forum.unlock') : trans('forum::forum.lock') }}" class="btn btn-xs btn-{{ $discussion->locked_at ? 'danger' : 'success' }} pull-right">
+                            <input type="submit" value="{{ $discussion->locked_at ? trans('firefly::discussions.unlock') : trans('firefly::discussions.lock') }}" class="btn btn-xs btn-{{ $discussion->locked_at ? 'danger' : 'success' }} pull-right">
                         </form>
 
                         <form action="{{ route('forum.discussions.flag', $discussion) }}" method="POST" class="panel-options">
@@ -28,7 +28,7 @@
                             {{ method_field('PATCH') }}
 
                             <input type="hidden" name="is_stickied" value="{{ empty($discussion->stickied_at) }}">
-                            <input type="submit" value="{{ $discussion->stickied_at ? trans('forum::forum.unsticky') : trans('forum::forum.sticky') }}" class="btn btn-xs btn-{{ $discussion->stickied_at ? 'danger' : 'success' }} pull-right">
+                            <input type="submit" value="{{ $discussion->stickied_at ? trans('firefly::discussions.unsticky') : trans('firefly::discussions.sticky') }}" class="btn btn-xs btn-{{ $discussion->stickied_at ? 'danger' : 'success' }} pull-right">
                         </form>
                     </div>
                 @endcan
@@ -36,13 +36,13 @@
         </div>
 
         <table class="table table-bordered">
-            @each('forum::partials.post', $discussion->posts, 'post')
+            @each('firefly::partials.post', $discussion->posts, 'post')
         </table>
 
-        @include('forum::partials.paginator', ['resource' => $discussion->posts])
+        @include('firefly::partials.paginator', ['resource' => $discussion->posts])
     </div>
 
     @can('reply', $discussion)
-        @include('forum::partials.quick-reply')
+        @include('firefly::partials.quick-reply')
     @endcan
 @endsection

@@ -1,11 +1,11 @@
 <?php
 
-namespace Bitporch\Forum\Controllers\Api;
+namespace Bitporch\Firefly\Controllers\Api;
 
-use Bitporch\Forum\Controllers\Controller;
-use Bitporch\Forum\Models\Post;
-use Bitporch\Forum\Requests\Posts\CreatePostRequest;
-use Bitporch\Forum\Requests\Posts\UpdatePostRequest;
+use Bitporch\Firefly\Controllers\Controller;
+use Bitporch\Firefly\Models\Post;
+use Bitporch\Firefly\Requests\Posts\CreatePostRequest;
+use Bitporch\Firefly\Requests\Posts\UpdatePostRequest;
 
 class PostController extends Controller
 {

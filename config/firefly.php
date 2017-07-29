@@ -74,14 +74,14 @@ return [
     'api' => [
         'enabled'    => false,
         'prefix'     => 'api/forum',
-        'namespace'  => '\Bitporch\Forum\Controllers\Api',
+        'namespace'  => '\Bitporch\Firefly\Controllers\Api',
         'middleware' => ['api', 'auth:api'],
     ],
 
     'web' => [
         'enabled'    => true,
         'prefix'     => 'forum',
-        'namespace'  => '\Bitporch\Forum\Controllers',
+        'namespace'  => '\Bitporch\Firefly\Controllers',
         'middleware' => 'web',
     ],
 

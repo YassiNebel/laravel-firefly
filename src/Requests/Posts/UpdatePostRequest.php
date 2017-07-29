@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitporch\Forum\Requests\Posts;
+namespace Bitporch\Firefly\Requests\Posts;
 
 use Illuminate\Foundation\Http\FormRequest;
 

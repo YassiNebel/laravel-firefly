@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\User;
-use Bitporch\Forum\Models\Discussion;
+use Bitporch\Firefly\Models\Discussion;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class DiscussionPolicy

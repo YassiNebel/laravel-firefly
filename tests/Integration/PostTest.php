@@ -2,8 +2,8 @@
 
 namespace Bitporch\Tests\Integration;
 
-use Bitporch\Forum\Models\Discussion;
-use Bitporch\Forum\Models\Post;
+use Bitporch\Firefly\Models\Discussion;
+use Bitporch\Firefly\Models\Post;
 use Bitporch\Tests\Stubs\Models\User;
 use Bitporch\Tests\TestCase;
 
@@ -18,12 +18,12 @@ class PostTest extends TestCase
         $discussion = create(Discussion::class);
         $content = $this->faker()->sentence;
         $this->post(route('forum.posts.store'), [
-                'discussion_id' => $discussion->id,
-                'content'       => $content,
-            ])
+            'discussion_id' => $discussion->id,
+            'content'       => $content,
+        ])
             ->assertResponseStatus(302)
             ->assertRedirectedToRoute('forum.discussions.show', $discussion->slug);
-    //     $this->seeInDatabase('posts', ['content' => $content, 'discussion_id' => $discussion->id]);
+        //     $this->seeInDatabase('posts', ['content' => $content, 'discussion_id' => $discussion->id]);
     }
 
     /**
@@ -49,8 +49,8 @@ class PostTest extends TestCase
         $post = $this->signInAndSeedPost();
         $content = $this->faker()->sentence;
         $this->put(route('forum.posts.update', $post->id), [
-                'content'       => $content,
-            ])
+            'content' => $content,
+        ])
             ->assertResponseStatus(302)
             ->assertRedirectedToRoute('forum.discussions.show', $post->discussion->slug);
     }

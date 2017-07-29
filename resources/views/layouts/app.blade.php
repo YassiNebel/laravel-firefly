@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name', 'Laravel') }} {{ trans('forum::forum.name') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} {{ trans('firefly::forum.name') }}</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -111,12 +111,12 @@
     @yield('head')
 </head>
 <body class="{{ collect(request()->segments())->implode(' ') }}">
-    @include('forum::partials.header')
+    @include('firefly::partials.header')
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-3" id="sidebar">
-                @include('forum::partials.sidebar')
+                @include('firefly::partials.sidebar')
             </div>
 
             <div class="col-xs-12 col-sm-9" id="content">

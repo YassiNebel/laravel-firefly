@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <form action="{{ route('forum.search') }}" class="nav navbar-nav navbar-right navbar-form">
                 <div class="form-group">
-                    <input type="text" name="query" id="query" placeholder="{{ trans('forum::forum.input_search') }}" class="form-control">
+                    <input type="text" name="query" id="query" placeholder="{{ trans('firefly::search.search') }}" class="form-control">
                 </div>
             </form>
         </div>
@@ -22,5 +22,5 @@
 </nav>
 
 <div class="jumbotron text-center" style="background: {{ isset($group->color) ? $group->color : '#AAC2CB' }}">
-    <h3>{{ isset($group->name) ? $group->name : trans('forum::forum.name') }}</h3>
+    <h3>{{ isset($group->name) ? $group->name : trans('firefly::forum.name') }}</h3>
 </div>

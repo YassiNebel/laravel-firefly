@@ -2,11 +2,11 @@
     <div class="label-group pull-right">
         @foreach ($discussion->groups as $group)
             @if ($discussion->stickied_at)
-                <div class="label label-success">Stickied</div>
+                <div class="label label-success">{{ trans('firefly::discussions.stickied') }}</div>
             @endif
 
             @if ($discussion->locked_at)
-                <div class="label label-danger">Locked</div>
+                <div class="label label-danger">{{ trans('firefly::discussions.locked') }}</div>
             @endif
 
             <div class="label" style="background: {{ $group->color }}">{{ $group->name }}</div>

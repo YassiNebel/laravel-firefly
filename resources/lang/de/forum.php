@@ -26,10 +26,6 @@ return [
     'posts_singular'                => 'Beitrag',
     'edit_post'                     => 'Beitrag bearbeiten',
 
-    // Discussion Single
-    'lock_discussion'               => 'Sperren',
-    'stick_discussion'              => 'Anheften',
-
     // Labels
     'label_title'                   => 'Titel',
     'label_content'                 => 'Inhalt',

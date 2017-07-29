@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix(config('forum.web.prefix'))->middleware(config('forum.web.middleware'))->namespace(config('forum.web.namespace'))->name('forum.')->group(function () {
+Route::prefix(config('firefly.web.prefix'))->middleware(config('firefly.web.middleware'))->namespace(config('firefly.web.namespace'))->name('forum.')->group(function () {
     Route::get('/', 'ForumController@index')->name('home');
     Route::get('search', 'ForumController@search')->name('search');
 

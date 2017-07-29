@@ -1,19 +1,19 @@
-@extends('forum::layouts.app')
+@extends('firefly::layouts.app')
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">{{ trans('forum::forum.discussions_plural') }}</div>
+        <div class="panel-heading">{{ trans('firefly::discussions.plural') }}</div>
 
         <ul class="list-group">
             @if (count($group->discussions))
-                @each('forum::partials.discussion', $group->discussions, 'discussion')
+                @each('firefly::partials.discussion', $group->discussions, 'discussion')
             @else
                 <li class="list-group-item">
-                    {{ trans('forum::forum.no_discussions_group_notice') }}
+                    {{ trans('firefly::discussions.empty') }}
                 </li>
             @endif
         </ul>
 
-        @include('forum::partials.paginator', ['resource' => $group->discussions])
+        @include('firefly::partials.paginator', ['resource' => $group->discussions])
     </div>
 @endsection

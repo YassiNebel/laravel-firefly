@@ -1,8 +1,8 @@
-## Laravel Forum
+## Laravel Firefly
 
-[![Build Status](https://travis-ci.org/bitporch/laravel-forum.svg?branch=master)](https://travis-ci.org/bitporch/laravel-forum)
-[![Total Downloads](https://poser.pugx.org/bitporch/laravel-forum/downloads)](https://packagist.org/packages/bitporch/laravel-forum)
-[![License](https://poser.pugx.org/bitporch/laravel-forum/license)](https://packagist.org/packages/bitporch/laravel-forum)
+[![Build Status](https://travis-ci.org/bitporch/laravel-firefly.svg?branch=master)](https://travis-ci.org/bitporch/laravel-firefly)
+[![Total Downloads](https://poser.pugx.org/bitporch/laravel-firefly/downloads)](https://packagist.org/packages/bitporch/laravel-firefly)
+[![License](https://poser.pugx.org/bitporch/laravel-firefly/license)](https://packagist.org/packages/bitporch/laravel-firefly)
 
 This package allows you to easily add a simple forum to your application whilst also supporting ease of use and expansion.
 
@@ -15,27 +15,27 @@ This package allows you to easily add a simple forum to your application whilst 
 Install the package directly from the command line using the following command.
 
 ```bash
-composer require "bitporch/laravel-forum"
+composer require "bitporch/laravel-firefly"
 ```
 
 Next open up `config/app.php` and add the following under the package providers section.
 
 ```php
-Bitporch\Forum\ForumServiceProvider::class,
+Bitporch\Firefly\FireflyServiceProvider::class,
 ```
 
 Then go ahead and run our easy to use install command.
 
 ```bash
-php artisan forum:install
+php artisan firefly:install
 ```
 
 Finally you need to register the policies inside of the `AuthServiceProvider`.
 
 ```php
-'Bitporch\Forum\Models\Discussion' => 'App\Policies\DiscussionPolicy',
-'Bitporch\Forum\Models\Group'      => 'App\Policies\GroupPolicy',
-'Bitporch\Forum\Models\Post'       => 'App\Policies\PostPolicy',
+'Bitporch\Firefly\Models\Discussion' => 'App\Policies\DiscussionPolicy',
+'Bitporch\Firefly\Models\Group'      => 'App\Policies\GroupPolicy',
+'Bitporch\Firefly\Models\Post'       => 'App\Policies\PostPolicy',
 ```
 
 ## Migrations
@@ -50,27 +50,27 @@ php artisan migrate
 Run the following command to publish the migrations and config file.
 
 ```bash
-php artisan vendor:publish --provider="Bitporch\Forum\ForumServiceProvider"
+php artisan vendor:publish --provider="Bitporch\Firefly\FireflyServiceProvider"
 ```
 
 ## Traits
 
-Next up you'll need to add the `ForumUser` trait to your `User` model.
+Next up you'll need to add the `FireflyUser` trait to your `User` model.
 
 ```php
 <?php
 
 namespace App;
 
-use Bitporch\Forum\Traits\ForumUser;
+use Bitporch\Firefly\Traits\FireflyUser;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use ForumUser;
+    use FireflyUser;
 }
 ```
 
 ## Configuration
 
-After publishing, the forum config file can be found under `config/forum.php` where you can modify the package configuration.
+After publishing, the firefly config file can be found under `config/Firefly.php` where you can modify the package configuration.

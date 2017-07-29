@@ -26,10 +26,6 @@ return [
     'posts_singular'                => '게시물',
     'edit_post'                     => '게시물 수정하기',
 
-    // Discussion Single
-    'lock_discussion'               => '토론 잠금하기',
-    'stick_discussion'              => '토론 공지로 등록하기',
-
     // Labels
     'label_title'                   => '제목',
     'label_content'                 => '게시물',

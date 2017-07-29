@@ -1,4 +1,4 @@
-<a href="{{ route('forum.discussions.create') }}" class="btn btn-success btn-block">{{ trans('forum::forum.new_discussion') }}</a>
+<a href="{{ route('forum.discussions.create') }}" class="btn btn-success btn-block">{{ trans('firefly::discussions.create') }}</a>
 
 <div class="list-group list-group-root well">
     @if (count($groups))

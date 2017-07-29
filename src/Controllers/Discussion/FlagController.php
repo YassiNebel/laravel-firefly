@@ -1,9 +1,9 @@
 <?php
 
-namespace Bitporch\Forum\Controllers\Discussion;
+namespace Bitporch\Firefly\Controllers\Discussion;
 
-use Bitporch\Forum\Controllers\Controller;
-use Bitporch\Forum\Models\Discussion;
+use Bitporch\Firefly\Controllers\Controller;
+use Bitporch\Firefly\Models\Discussion;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -27,6 +27,6 @@ class FlagController extends Controller
             $discussion->update(['stickied_at' => $discussion->stickied_at ? null : Carbon::now()]);
         }
 
-        return redirect()->route('forum.discussions.show', $discussion->slug);
+        return redirect()->route('firefly.discussions.show', $discussion->slug);
     }
 }

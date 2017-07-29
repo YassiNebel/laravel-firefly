@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitporch\Forum\Console;
+namespace Bitporch\Firefly\Console;
 
 use Illuminate\Console\Command;
 
@@ -11,14 +11,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'forum:install';
+    protected $signature = 'firefly:install';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install the forum and initial setup';
+    protected $description = 'Install firefly and initial setup';
 
     /**
      * Policies that need to be converted.
@@ -60,6 +60,6 @@ class InstallCommand extends Command
             );
             $this->info(sprintf('Policy %s created', $value), 'vv');
         }
-        $this->info('Forum installed.');
+        $this->info('Firefly installed.');
     }
 }

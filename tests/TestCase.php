@@ -2,7 +2,7 @@
 
 namespace Bitporch\Tests;
 
-use Bitporch\Forum\ForumServiceProvider;
+use Bitporch\Firefly\FireflyServiceProvider;
 use Bitporch\Tests\Stubs\Models\User;
 use Exception;
 use Faker\Factory as Faker;
@@ -24,7 +24,7 @@ class TestCase extends BaseTestCase
      */
     protected function getPackageProviders($app)
     {
-        return [ForumServiceProvider::class, ConsoleServiceProvider::class];
+        return [FireflyServiceProvider::class, ConsoleServiceProvider::class];
     }
 
     /**
@@ -39,16 +39,16 @@ class TestCase extends BaseTestCase
         // Setup default database to use sqlite :memory:
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver'    => 'sqlite',
-            'database'  => ':memory:',
-            'prefix'    => '',
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
         ]);
 
-        $settings = require __DIR__.'/../config/forum.php';
+        $settings = require __DIR__.'/../config/firefly.php';
 
         $this->applySettings($app, $settings);
 
-        $app['config']->set('forum.user', User::class);
+        $app['config']->set('firefly.user', User::class);
     }
 
     protected function setUp()
@@ -111,7 +111,7 @@ class TestCase extends BaseTestCase
      * @param array       $settings
      * @param string      $prefix
      */
-    private function applySettings(Application &$app, array $settings, $prefix = 'forum.')
+    private function applySettings(Application &$app, array $settings, $prefix = 'firefly.')
     {
         foreach ($settings as $config => $value) {
             if (is_array($value)) {

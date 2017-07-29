@@ -1,11 +1,11 @@
 <?php
 
-namespace Bitporch\Forum\Traits;
+namespace Bitporch\Firefly\Traits;
 
-use Bitporch\Forum\Models\Discussion;
-use Bitporch\Forum\Models\Post;
+use Bitporch\Firefly\Models\Discussion;
+use Bitporch\Firefly\Models\Post;
 
-trait ForumUser
+trait FireflyUser
 {
     /**
      * Return all the discussions created by the user.

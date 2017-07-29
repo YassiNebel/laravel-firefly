@@ -1,10 +1,10 @@
 <?php
 
-namespace Bitporch\Forum\Controllers;
+namespace Bitporch\Firefly\Controllers;
 
-use Bitporch\Forum\Models\Discussion;
-use Bitporch\Forum\Requests\Discussions\CreateDiscussionRequest;
-use Bitporch\Forum\Requests\Discussions\UpdateDiscussionRequest;
+use Bitporch\Firefly\Models\Discussion;
+use Bitporch\Firefly\Requests\Discussions\CreateDiscussionRequest;
+use Bitporch\Firefly\Requests\Discussions\UpdateDiscussionRequest;
 
 class DiscussionController extends Controller
 {
@@ -25,7 +25,7 @@ class DiscussionController extends Controller
      */
     public function create()
     {
-        return view('forum::discussions.create');
+        return view('firefly::discussions.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class DiscussionController extends Controller
 
         $discussion->groups()->attach($request->group_id);
 
-        return redirect()->route('forum.discussions.show', $discussion->slug);
+        return redirect()->route('firefly.discussions.show', $discussion->slug);
     }
 
     /**
@@ -61,9 +61,9 @@ class DiscussionController extends Controller
      */
     public function show(Discussion $discussion)
     {
-        $discussion->posts = $discussion->posts()->paginate(config('forum.pagination.posts'));
+        $discussion->posts = $discussion->posts()->paginate(config('firefly.pagination.posts'));
 
-        return view('forum::discussions.show')->with(compact('discussion'));
+        return view('firefly::discussions.show')->with(compact('discussion'));
     }
 
     /**
@@ -78,7 +78,7 @@ class DiscussionController extends Controller
     {
         $discussion->update($request->all());
 
-        return redirect()->route('forum.discussions.show', $discussion->slug);
+        return redirect()->route('firefly.discussions.show', $discussion->slug);
     }
 
     /**
@@ -92,6 +92,6 @@ class DiscussionController extends Controller
     {
         $discussion->delete();
 
-        return redirect()->route('forum.home')->with('success', 'Discussion deleted successfully.');
+        return redirect()->route('firefly.home')->with('success', 'Discussion deleted successfully.');
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Bitporch\Forum\Controllers\Api;
+namespace Bitporch\Firefly\Controllers\Api;
 
-use Bitporch\Forum\Controllers\Controller;
-use Bitporch\Forum\Models\Group;
-use Bitporch\Forum\Requests\Groups\CreateGroupRequest;
-use Bitporch\Forum\Requests\Groups\UpdateGroupRequest;
+use Bitporch\Firefly\Controllers\Controller;
+use Bitporch\Firefly\Models\Group;
+use Bitporch\Firefly\Requests\Groups\CreateGroupRequest;
+use Bitporch\Firefly\Requests\Groups\UpdateGroupRequest;
 
 class GroupController extends Controller
 {
@@ -43,7 +43,7 @@ class GroupController extends Controller
     public function show(Group $group)
     {
         $group->discussions = $group->discussions()
-            ->paginate(config('forum.pagination.discussions'));
+            ->paginate(config('firefly.pagination.discussions'));
 
         return response($group);
     }
