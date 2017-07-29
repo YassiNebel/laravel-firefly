@@ -23,6 +23,7 @@
                 </div>
 
                 @if (config('firefly.private_groups'))
+                    <div class="form-group">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="private"> Private Group?
