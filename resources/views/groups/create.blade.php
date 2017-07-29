@@ -22,6 +22,15 @@
                     @error('color')
                 </div>
 
+                @if (config('firefly.private_groups'))
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="private"> Private Group?
+                            </label>
+                        </div>
+                    </div>
+                @endif
+
                 <button class="btn btn-success">{{ trans('firefly::forum.submit') }}</button>
             </form>
         </div>
