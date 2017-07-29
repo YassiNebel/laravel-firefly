@@ -21,7 +21,7 @@ class DiscussionPolicy
     }
 
     /**
-     * Determine the given user can manage the discussion.
+     * Determine if the given user can manage the discussion.
      *
      * @param  \App\User  $user
      * @param  \App\Discussion  $discussion
