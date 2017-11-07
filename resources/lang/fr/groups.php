@@ -4,7 +4,7 @@ return [
 
     'plural'   => 'Groupes',
     'singular' => 'Groupe',
-    'create'   => 'Créer un Group',
-    'edit'     => '&Eacute;diter un Group',
+    'create'   => 'Créer un Groupe',
+    'edit'     => '&Eacute;diter un Groupe',
 
 ];
